@@ -1,20 +1,9 @@
----
-title: RagEditablePdfLangChainChatbot
-emoji: 🚀
-colorFrom: red
-colorTo: red
-sdk: docker
-app_port: 8501
-tags:
-- streamlit
-pinned: false
-short_description: This is the Rag Streamlit Editable Pdf LangChain Chatbot
-license: mit
----
+This project was engineered to move beyond basic RAG "wrappers" and address the core challenges of enterprise-grade document intelligence: Data Integrity, Hallucination Control, and User Agency.
 
-# Welcome to Streamlit!
+Hybrid Memory Management: By utilizing LangChain’s Buffer Window Memory, the system maintains conversational context without allowing the LLM to drift into "hallucination loops" during long sessions.
 
-Edit `/src/streamlit_app.py` to customize this app to your heart's desire. :heart:
+Vector Optimized Retrieval: Instead of basic top-k similarity, this architecture implements Semantic Chunking with a focus on overlap-integrity. This ensures that metadata—like table headers or section titles—is never severed from its context during the embedding process.
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+The "Editable" Innovation: Most RAG systems are "Read-Only." This pipeline introduces an Editable PDF Interface, allowing a human-in-the-loop (HITL) to correct or annotate extracted data before it is committed to downstream databases—a critical requirement for finance and legal compliance.
+
+Streamlit as an Enterprise Dashboard: Streamlit was chosen not just for UI, but for its ability to handle asynchronous state management, providing a low-latency experience for end-users interacting with large (100MB+) vector stores.
